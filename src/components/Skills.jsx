@@ -20,8 +20,6 @@ const Skills = () => {
           </div>
           <div>
              <p>HTML</p>
-          </div>
-          <div>
              <p>CSS</p>
           </div>
           <div>
@@ -33,6 +31,9 @@ const Skills = () => {
           </div>
           <div>
              <p>GitHub</p>
+          </div>
+          <div>
+             <p>Docker</p>
           </div>
           <div>
              <p>AWS</p>
