@@ -7,9 +7,13 @@
 @layer base {
   body {
     @apply font-[Raleway];
+    @apply bg-white;
   }
   li {
     @apply px-4;
     @apply cursor-pointer;
+  }
+  a:hover {
+    @apply text-[#9fb9ac]
   }
 }
