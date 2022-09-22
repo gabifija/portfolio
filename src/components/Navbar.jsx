@@ -83,12 +83,12 @@ const Navbar = () => {
       <div className='hidden lg:flex fixed flex-col top-[35%] left-0'>
         <ul>
           <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333333]'>
-            <a className='flex justify-between items-center w-full text-gray-300' href={gitHubLink}>
+            <a className='flex justify-between items-center w-full text-white hover:text-[#9fb9ac]' href={gitHubLink} target='_blank' rel='noreferrer'>
               GitHub <FaGithub size={30} />
             </a>
           </li>
-          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#6fc2b0]'>
-            <a className='flex justify-between items-center w-full text-gray-300' href={emailLink}>
+          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#b66b53]'>
+            <a className='flex justify-between items-center w-full text-white hover:text-black' href={emailLink}>
               Email <HiOutlineMail size={30} />
             </a>
           </li>
