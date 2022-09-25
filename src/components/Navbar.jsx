@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <div className='fixed w-full h-[80px] flex justify-between items-center px-4 bg-white text-black'>
       <div>
-        gabee.
+        gaby.
       </div>
       {/* menu */}
       <ul className='hidden md:flex'>
