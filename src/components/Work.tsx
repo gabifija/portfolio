@@ -11,13 +11,13 @@ const projects: Project[] = [
     name: 'TrueLoyal',
     note: '(formerly TINT), current',
     description:
-      'improving the admin dashboard and apis: migrating data from mongodb to postgresql, rewriting queries in the python services, and moving legacy endpoints to ruby on rails. i use claude code to plan, implement and verify features end to end.',
+      'improving the admin dashboard and apis, migrating data from mongodb to postgresql and moving legacy endpoints to rails. building features with claude code.',
     stack: ['Ruby on Rails', 'Python', 'PostgreSQL', 'MongoDB'],
   },
   {
     name: 'this portfolio',
     description:
-      'migrated from create react app to vite, react 19, tailwind 4 and typescript: one pull request per step, ci on every change, and pixel-by-pixel checks against the live site.',
+      'modernized from create react app to vite, react 19 and typescript, with ci on every change.',
     stack: ['TypeScript', 'React', 'Vite', 'Tailwind CSS', 'GitHub Actions'],
     link: { href: 'https://github.com/gabifija/portfolio', label: 'code' },
   },
