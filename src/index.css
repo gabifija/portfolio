@@ -1,9 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
+/* Keep Tailwind 3 defaults that changed in v4, so the site looks the same */
+@layer base {
+  input::placeholder,
+  textarea::placeholder {
+    color: #9ca3af; /* Tailwind 3 gray-400 */
+  }
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
 
 @layer base {
   body {
@@ -15,6 +24,6 @@
     @apply cursor-pointer;
   }
   a:hover {
-    @apply text-[#9fb9ac]
+    @apply text-[#9fb9ac];
   }
 }
