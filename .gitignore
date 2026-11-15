@@ -21,3 +21,19 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# vite
+/dist
+
+# learning workspace (not part of the site)
+/.agents
+/.claude
+/assets
+/learning-records
+/lessons
+/reference
+MISSION.md
+NOTES.md
+PLAN.md
+RESOURCES.md
+skills-lock.json
