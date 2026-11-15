@@ -18,9 +18,8 @@ const About = () => {
             <p>please take a look around.</p>
           </div>
           <div>
-            <p>i am passionate about creating web applications.</p>
-            <p>i am working with development teams and product managers to ideate software solutions.</p>
-            <p>i specialize in building the front-end of applications through appealing visual design, writing effective APIs, developing and managing well-functioning databases and applications.</p>
+            <p className='pb-2'>i modernize legacy systems safely, keeping what already works running.</p>
+            <p>i work closely with product and engineering teams to turn ideas into reliable features.</p>
           </div>
         </div>
       </div>

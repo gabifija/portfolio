@@ -1,3 +1,13 @@
+const skillGroups: string[][] = [
+  ['Ruby', 'Ruby on Rails'],
+  ['Python', 'Django'],
+  ['TypeScript', 'JavaScript'],
+  ['React', 'Tailwind CSS'],
+  ['PostgreSQL', 'MongoDB'],
+  ['Docker', 'AWS'],
+  ['GitHub', 'GitHub Actions'],
+  ['Claude Code', 'AI-assisted development'],
+];
 
 const Skills = () => {
   return (
@@ -9,38 +19,17 @@ const Skills = () => {
         </div>
 
         <div className='w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-8'>
-          <div>
-             <p>Ruby</p>
-             <p>Ruby on Rails</p>
-          </div>
-          <div>
-             <p>Python</p>
-             <p>Django</p>
-          </div>
-          <div>
-             <p>HTML</p>
-             <p>CSS</p>
-          </div>
-          <div>
-             <p>JavaScript</p>
-             <p>React</p>
-          </div>
-          <div>
-             <p>PostgreSQL</p>
-          </div>
-          <div>
-             <p>GitHub</p>
-          </div>
-          <div>
-             <p>Docker</p>
-          </div>
-          <div>
-             <p>AWS</p>
-          </div>
+          {skillGroups.map((group) => (
+            <div key={group[0]}>
+              {group.map((skill) => (
+                <p key={skill}>{skill}</p>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Skills;

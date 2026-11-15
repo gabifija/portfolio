@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { FaBars, FaTimes, FaGithub } from 'react-icons/fa';
+import { FaBars, FaTimes, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 import { Link } from 'react-scroll';
 
 const Navbar = () => {
+  const linkedInLink = 'https://www.linkedin.com/in/gabifija/';
   const gitHubLink = 'https://github.com/gabifija';
-  const emailLink = 'mailto:gabrielapapier@gmail.com';
+  const emailLink = 'mailto:gabrielafijalkowska@gmail.com';
 
   const [nav, setNav] = useState(false);
 
@@ -14,7 +15,7 @@ const Navbar = () => {
   return (
     <div className='fixed w-full h-[80px] flex justify-between items-center px-4 bg-white text-black'>
       <div>
-        gaby.
+        gabi.
       </div>
       {/* menu */}
       <ul className='hidden md:flex'>
@@ -82,6 +83,11 @@ const Navbar = () => {
       {/* social icons */}
       <div className='hidden lg:flex fixed flex-col top-[35%] left-0'>
         <ul>
+          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#327364]'>
+            <a className='flex justify-between items-center w-full text-white hover:text-[#9fb9ac]' href={linkedInLink} target='_blank' rel='noreferrer'>
+              LinkedIn <FaLinkedin size={30} />
+            </a>
+          </li>
           <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333333]'>
             <a className='flex justify-between items-center w-full text-white hover:text-[#9fb9ac]' href={gitHubLink} target='_blank' rel='noreferrer'>
               GitHub <FaGithub size={30} />
