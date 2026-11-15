@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FaBars, FaTimes, FaGithub } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 import { Link } from 'react-scroll';

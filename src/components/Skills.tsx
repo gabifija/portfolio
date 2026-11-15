@@ -1,8 +1,7 @@
-import React from 'react';
 
 const Skills = () => {
   return (
-    <div name='skills' className='w-full h-screen bg-white text-black'>
+    <div id='skills' className='w-full h-screen bg-white text-black'>
       <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
         <div>
           <p className='text-2xl font-bold inline text-white bg-[#9fb9ac] p-2'>skills</p>
