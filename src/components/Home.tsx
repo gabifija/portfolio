@@ -9,8 +9,8 @@ const Home = () => {
         <p className='text-2xl sm:text-4xl font-bold'>gabriela fijałkowska-papier</p>
         <h2 className='text-2xl sm:text-4xl font-bold'>i am a <span className='text-[#b66b53] font-bold'>full-stack engineer</span>.</h2>
         <div className='py-4'>
-          <p className='max-w-[700px]'>i have been building web applications professionally since 2016, mostly with ruby on rails.</p>
-          <p className='max-w-[700px]'>these days i work across the stack (rails and python apis, postgresql, typescript and react) and build features with ai-assisted workflows using claude code.</p>
+          <p className='max-w-[700px]'>building web applications since 2016 with ruby on rails and react.</p>
+          <p className='max-w-[700px]'>today i work across the stack and build features with claude code.</p>
         </div>
         <div>
           <Link to='work' smooth={true} duration={500}>
