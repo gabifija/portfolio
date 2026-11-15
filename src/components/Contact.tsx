@@ -58,7 +58,7 @@ const Contact = () => {
       <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col max-w-[600px] w-full'>
         <div className='pb-8'>
           <p className='text-2xl font-bold inline text-white bg-[#9fb9ac] p-2'>contact</p>
-          <p className='py-4'>submit the form below or send me an email - <a href='mailto:gabrielapapier@gmail.com'>gabrielapapier@gmail.com</a></p>
+          <p className='py-4'>submit the form below or send me an email - <a href='mailto:gabrielafijalkowska@gmail.com'>gabrielafijalkowska@gmail.com</a></p>
         </div>
         {showMessage ? (
           <p className='text-[#327364]'>your message has been sent successfully!</p>
