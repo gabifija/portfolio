@@ -1,10 +1,9 @@
-import React from 'react';
 import { HiArrowNarrowRight } from 'react-icons/hi';
 import { Link } from 'react-scroll';
 
 const Home = () => {
   return (
-    <div name='home' className='w-full h-screen bg-white text-black'>
+    <div id='home' className='w-full h-screen bg-white text-black'>
       <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full'>
         <p>hello, my name is</p>
         <p className='text-2xl sm:text-4xl font-bold'>gabriela fijałkowska-papier</p>

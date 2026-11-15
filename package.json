@@ -3,23 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "formik": "^2.2.9",
+    "@hookform/resolvers": "^7.0.6",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
+    "react-hook-form": "^7.92.0",
     "react-icons": "^5.7.0",
     "react-scroll": "^1.8.7",
-    "yup": "^0.32.11"
+    "zod": "^4.6.7"
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "typecheck": "tsc",
+    "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "type": "module",
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/react-scroll": "^1.8.10",
     "@vitejs/plugin-react": "^6.3.0",
     "tailwindcss": "^4.3.5",
+    "typescript": "^7.0.2",
     "vite": "^8.3.8"
   }
 }
