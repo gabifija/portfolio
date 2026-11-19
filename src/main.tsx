@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-// Self-hosted fonts (ADR 0003): only the weights the site uses, and only the
+// Self-hosted fonts: only the weights the site uses, and only the
 // latin + latin-ext subsets (latin-ext covers characters like "ł").
 import '@fontsource/inter/latin-400.css';
 import '@fontsource/inter/latin-ext-400.css';

@@ -1,7 +1,7 @@
 import { links } from '../links';
 import Section from './Section';
 
-// Direct links instead of a form (ADR 0006). The link text is the address
+// Direct links instead of a form. The link text is the address
 // itself, so it's readable and easy to copy.
 const contactLinks = [
   { ...links.email, text: links.email.href.replace('mailto:', ''), external: false },

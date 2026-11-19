@@ -1,4 +1,4 @@
-// The page's sections, in page order (ADR 0005). The navbar renders from this
+// The page's sections, in page order. The navbar renders from this
 // list; App renders the section components in the same order.
 export const sections = [
   { id: 'home', label: 'home' },

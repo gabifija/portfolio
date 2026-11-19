@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 /*
- * Design tokens for the new look (ADR 0002, ADR 0003).
+ * Design tokens for the new look.
  * One accent (terracotta) on a neutral scale. Use `accent` for large text and
  * buttons, `accent-strong` for links and small text (WCAG AA on paper).
  * Fonts are self-hosted via @fontsource, imported in main.tsx.
@@ -34,7 +34,7 @@
       scroll-behavior: smooth;
     }
   }
-  /* Visible keyboard focus everywhere, in the accent (ADR 0002) */
+  /* Visible keyboard focus everywhere, in the accent */
   :focus-visible {
     outline: 2px solid var(--color-accent-strong);
     outline-offset: 3px;

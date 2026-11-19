@@ -12,7 +12,7 @@ type Project = {
   link?: { href: string; label: string };
 };
 
-// All text is lowercase, names included (ADR 0001).
+// All text is lowercase, names included.
 const projects: Project[] = [
   {
     name: 'trueloyal',

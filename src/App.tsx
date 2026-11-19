@@ -5,7 +5,7 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 
-// Section order follows src/sections.ts (ADR 0005).
+// Section order follows src/sections.ts.
 function App() {
   return (
     <>

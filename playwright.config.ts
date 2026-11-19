@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 // Tests run against the production build, served by `vite preview`
-// at the GitHub Pages base path (see vite.config.ts and ADR 0007).
+// at the GitHub Pages base path (see vite.config.ts).
 const port = 4173;
 
 export default defineConfig({

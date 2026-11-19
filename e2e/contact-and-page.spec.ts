@@ -33,7 +33,7 @@ test('all visible page text is lowercase', async ({ page }) => {
 
 test('retired colours (green, sage) are not used anywhere', async ({ page }) => {
   await page.goto('./');
-  // #327364 and #9fb9ac (ADR 0002)
+  // the old green #327364 and sage #9fb9ac
   const retired = ['rgb(50, 115, 100)', 'rgb(159, 185, 172)'];
 
   // Hover every link and button too, since hover colours are where retired hues hid.

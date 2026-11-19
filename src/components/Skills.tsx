@@ -3,8 +3,8 @@ import Tags from './Tags';
 
 type SkillCategory = 'backend' | 'frontend' | 'data' | 'infra' | 'tools';
 
-// Every skill belongs to exactly one skill category (see GLOSSARY.md).
-// All text is lowercase, names included (ADR 0001).
+// Every skill belongs to exactly one category.
+// All text is lowercase, names included.
 const skillsByCategory: { category: SkillCategory; skills: string[] }[] = [
   { category: 'backend', skills: ['ruby', 'rails', 'python', 'django'] },
   { category: 'frontend', skills: ['typescript', 'javascript', 'react', 'tailwind css'] },

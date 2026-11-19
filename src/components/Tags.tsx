@@ -4,7 +4,7 @@ type TagsProps = {
   label: string;
 };
 
-/** A row of small mono details: stack entries, skills (ADR 0003). */
+/** A row of small mono details: stack entries, skills. */
 const Tags = ({ tags, label }: TagsProps) => (
   <ul aria-label={label} className='flex flex-wrap gap-2'>
     {tags.map((tag) => (
