@@ -1,13 +1,26 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap');
-
 @import 'tailwindcss';
 
-/* Keep Tailwind 3 defaults that changed in v4, so the site looks the same */
+/*
+ * Design tokens for the new look.
+ * One accent (terracotta) on a neutral scale. Use `accent` for large text and
+ * buttons, `accent-strong` for links and small text (WCAG AA on paper).
+ * Fonts are self-hosted via @fontsource, imported in main.tsx.
+ */
+@theme {
+  --color-accent: #b66b53; /* 3.8:1 on paper: large text and non-text only */
+  --color-accent-strong: #9c5642; /* 5.2:1 on paper */
+  --color-ink: #1c1917; /* body text, 16.6:1 */
+  --color-muted: #57534e; /* secondary text, 7.3:1 */
+  --color-subtle: #78716c; /* details, 4.6:1 */
+  --color-line: #e7e5e4; /* borders and dividers */
+  --color-paper: #faf9f7; /* page background */
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* Keep the Tailwind 3 pointer cursor on buttons (v4 dropped it) */
 @layer base {
-  input::placeholder,
-  textarea::placeholder {
-    color: #9ca3af; /* Tailwind 3 gray-400 */
-  }
   button:not(:disabled),
   [role='button']:not(:disabled) {
     cursor: pointer;
@@ -15,15 +28,20 @@
 }
 
 @layer base {
+  /* In-page anchor links scroll smoothly, unless the visitor prefers reduced motion */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  /* Visible keyboard focus everywhere, in the accent */
+  :focus-visible {
+    outline: 2px solid var(--color-accent-strong);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
   body {
-    @apply font-[Raleway];
-    @apply bg-white;
-  }
-  li {
-    @apply px-4;
-    @apply cursor-pointer;
-  }
-  a:hover {
-    @apply text-[#9fb9ac];
+    @apply font-sans;
+    @apply bg-paper text-ink;
   }
 }

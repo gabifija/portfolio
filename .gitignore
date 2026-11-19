@@ -37,3 +37,7 @@ NOTES.md
 PLAN.md
 RESOURCES.md
 skills-lock.json
+
+# playwright
+/test-results
+/playwright-report
