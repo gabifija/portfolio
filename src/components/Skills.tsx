@@ -1,30 +1,33 @@
 import Section from './Section';
+import Tags from './Tags';
 
-const skillGroups: string[][] = [
-  ['Ruby', 'Ruby on Rails'],
-  ['Python', 'Django'],
-  ['TypeScript', 'JavaScript'],
-  ['React', 'Tailwind CSS'],
-  ['PostgreSQL', 'MongoDB'],
-  ['Docker', 'AWS'],
-  ['GitHub', 'GitHub Actions'],
-  ['Claude Code', 'AI-assisted development'],
+type SkillCategory = 'backend' | 'frontend' | 'data' | 'infra' | 'tools';
+
+// Every skill belongs to exactly one skill category (see GLOSSARY.md).
+// All text is lowercase, names included (ADR 0001).
+const skillsByCategory: { category: SkillCategory; skills: string[] }[] = [
+  { category: 'backend', skills: ['ruby', 'rails', 'python', 'django'] },
+  { category: 'frontend', skills: ['typescript', 'javascript', 'react', 'tailwind css'] },
+  { category: 'data', skills: ['postgresql', 'mongodb'] },
+  { category: 'infra', skills: ['docker', 'aws', 'github actions'] },
+  { category: 'tools', skills: ['claude code', 'ai-assisted development'] },
 ];
 
 const Skills = () => {
   return (
     <Section id='skills' heading='skills'>
-      <p>technologies i have worked with:</p>
+      <p className='text-muted'>technologies i have worked with:</p>
 
-      <div className='w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-8'>
-        {skillGroups.map((group) => (
-          <div key={group[0]}>
-            {group.map((skill) => (
-              <p key={skill}>{skill}</p>
-            ))}
+      <dl className='divide-y divide-line pt-8'>
+        {skillsByCategory.map(({ category, skills }) => (
+          <div key={category} className='grid gap-3 py-4 sm:grid-cols-[8rem_1fr] sm:items-baseline sm:gap-6'>
+            <dt className='font-semibold'>{category}</dt>
+            <dd>
+              <Tags tags={skills} label={`${category} skills`} />
+            </dd>
           </div>
         ))}
-      </div>
+      </dl>
     </Section>
   );
 };
