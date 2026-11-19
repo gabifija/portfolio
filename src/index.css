@@ -38,6 +38,12 @@
       scroll-behavior: smooth;
     }
   }
+  /* Visible keyboard focus everywhere, in the accent (ADR 0002) */
+  :focus-visible {
+    outline: 2px solid var(--color-accent-strong);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
   body {
     @apply font-sans;
     @apply bg-paper text-ink;
