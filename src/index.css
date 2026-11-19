@@ -19,12 +19,8 @@
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
-/* Keep Tailwind 3 defaults that changed in v4, so the site looks the same */
+/* Keep the Tailwind 3 pointer cursor on buttons (v4 dropped it) */
 @layer base {
-  input::placeholder,
-  textarea::placeholder {
-    color: #9ca3af; /* Tailwind 3 gray-400 */
-  }
   button:not(:disabled),
   [role='button']:not(:disabled) {
     cursor: pointer;
@@ -47,8 +43,5 @@
   body {
     @apply font-sans;
     @apply bg-paper text-ink;
-  }
-  a:hover {
-    @apply text-[#9fb9ac];
   }
 }
