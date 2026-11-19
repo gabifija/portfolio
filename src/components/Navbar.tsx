@@ -1,107 +1,67 @@
 import { useState } from 'react';
-import { FaBars, FaTimes, FaGithub, FaLinkedin } from 'react-icons/fa';
-import { HiOutlineMail } from 'react-icons/hi';
-import { Link } from 'react-scroll';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { sections } from '../sections';
+
+const linkClassName = 'text-muted hover:text-accent-strong focus-visible:text-accent-strong';
 
 const Navbar = () => {
-  const linkedInLink = 'https://www.linkedin.com/in/gabifija/';
-  const gitHubLink = 'https://github.com/gabifija';
-  const emailLink = 'mailto:gabrielafijalkowska@gmail.com';
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const [nav, setNav] = useState(false);
-
-  const handleClick = () => setNav(!nav);
+  const closeMenu = () => setMenuOpen(false);
 
   return (
-    <div className='fixed w-full h-[80px] flex justify-between items-center px-4 bg-white text-black'>
-      <div>
-        gabi.
-      </div>
-      {/* menu */}
-      <ul className='hidden md:flex'>
-        <li>
-          <Link to='home' smooth={true} duration={500}>
-            home
-          </Link>
-        </li>
-        <li>
-          <Link to='about' smooth={true} duration={500}>
-            about
-          </Link>
-        </li>
-        <li>
-          <Link to='skills' smooth={true} duration={500}>
-            skills
-          </Link>
-        </li>
-        <li>
-          <Link to='work' smooth={true} duration={500}>
-            work
-          </Link>
-        </li>
-        <li>
-          <Link to='contact' smooth={true} duration={500}>
-            contact
-          </Link>
-        </li>
-      </ul>
+    <header className='fixed inset-x-0 top-0 z-10 h-20 border-b border-line bg-paper/90 backdrop-blur'>
+      <div className='mx-auto flex h-full max-w-[1000px] items-center justify-between px-6'>
+        <a href='#home' onClick={closeMenu} className='text-lg font-semibold text-ink hover:text-accent-strong'>
+          gabi.
+        </a>
 
-      {/* hamburger menu */}
-      <div onClick={handleClick} className='md:hidden z-10'>
-        {nav ? <FaTimes /> : <FaBars />}
+        {/* desktop menu */}
+        <nav aria-label='main' className='hidden md:block'>
+          <ul className='flex gap-8'>
+            {sections.map(({ id, label }) => (
+              <li key={id}>
+                <a href={`#${id}`} className={linkClassName}>
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        {/* mobile menu toggle */}
+        <button
+          type='button'
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? 'close menu' : 'open menu'}
+          aria-expanded={menuOpen}
+          aria-controls='mobile-menu'
+          className='text-ink md:hidden'
+        >
+          {menuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
+        </button>
       </div>
 
       {/* mobile menu */}
-      <ul className={nav ? 'absolute top-0 left-0 w-full h-screen bg-[#ffffff] flex flex-col justify-center items-center' : 'hidden'}>
-        <li className='py-6 text-4xl'>
-          <Link onClick={handleClick} to='home' smooth={true} duration={500}>
-            home
-          </Link>
-        </li>
-        <li className='py-6 text-4xl'>
-          <Link onClick={handleClick} to='about' smooth={true} duration={500}>
-            about
-          </Link>
-        </li>
-        <li className='py-6 text-4xl'>
-          <Link onClick={handleClick} to='skills' smooth={true} duration={500}>
-            skills
-          </Link>
-        </li>
-        <li className='py-6 text-4xl'>
-          <Link onClick={handleClick} to='work' smooth={true} duration={500}>
-            work
-          </Link>
-        </li>
-        <li className='py-6 text-4xl'>
-          <Link onClick={handleClick} to='contact' smooth={true} duration={500}>
-            contact
-          </Link>
-        </li>
-      </ul>
-
-      {/* social icons */}
-      <div className='hidden lg:flex fixed flex-col top-[35%] left-0'>
-        <ul>
-          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#327364]'>
-            <a className='flex justify-between items-center w-full text-white hover:text-[#9fb9ac]' href={linkedInLink} target='_blank' rel='noreferrer'>
-              LinkedIn <FaLinkedin size={30} />
-            </a>
-          </li>
-          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333333]'>
-            <a className='flex justify-between items-center w-full text-white hover:text-[#9fb9ac]' href={gitHubLink} target='_blank' rel='noreferrer'>
-              GitHub <FaGithub size={30} />
-            </a>
-          </li>
-          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#b66b53]'>
-            <a className='flex justify-between items-center w-full text-white hover:text-black' href={emailLink}>
-              Email <HiOutlineMail size={30} />
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+      {menuOpen && (
+        <nav
+          id='mobile-menu'
+          aria-label='menu'
+          className='h-[calc(100dvh-5rem)] border-t border-line bg-paper md:hidden'
+        >
+          <ul className='flex h-full flex-col items-center justify-center gap-10'>
+            {sections.map(({ id, label }) => (
+              <li key={id}>
+                <a href={`#${id}`} onClick={closeMenu} className={`text-4xl ${linkClassName}`}>
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+    </header>
   );
-}
+};
 
 export default Navbar;

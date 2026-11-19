@@ -32,13 +32,15 @@
 }
 
 @layer base {
+  /* In-page anchor links scroll smoothly, unless the visitor prefers reduced motion */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
   body {
     @apply font-sans;
     @apply bg-paper text-ink;
-  }
-  li {
-    @apply px-4;
-    @apply cursor-pointer;
   }
   a:hover {
     @apply text-[#9fb9ac];

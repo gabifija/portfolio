@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
+import Section from './Section';
+
 const GETFORM_ENDPOINT = 'https://getform.io/f/eefa2a49-7171-4ef1-bf6b-728c443e13cf';
 
 // One schema gives both the runtime validation rules and the TypeScript type.
@@ -54,11 +56,10 @@ const Contact = () => {
   };
 
   return (
-    <div id='contact' className='w-full h-screen bg-white text-black flex justify-center items-center p-4'>
+    <Section id='contact' heading='contact'>
       <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col max-w-[600px] w-full'>
         <div className='pb-8'>
-          <p className='text-2xl font-bold inline text-white bg-[#9fb9ac] p-2'>contact</p>
-          <p className='py-4'>submit the form below or send me an email - <a href='mailto:gabrielafijalkowska@gmail.com'>gabrielafijalkowska@gmail.com</a></p>
+          <p>submit the form below or send me an email - <a href='mailto:gabrielafijalkowska@gmail.com'>gabrielafijalkowska@gmail.com</a></p>
         </div>
         {showMessage ? (
           <p className='text-[#327364]'>your message has been sent successfully!</p>
@@ -99,7 +100,7 @@ const Contact = () => {
           </>
         )}
       </form>
-    </div>
+    </Section>
   );
 };
 

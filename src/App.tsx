@@ -1,20 +1,23 @@
 import Navbar from './components/Navbar';
 import Home from './components/Home';
+import Work from './components/Work';
 import About from './components/About';
 import Skills from './components/Skills';
-import Work from './components/Work';
 import Contact from './components/Contact';
 
+// Section order follows src/sections.ts (ADR 0005).
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
-      <Home />
-      <About />
-      <Skills />
-      <Work />
-      <Contact />
-    </div>
+      <main>
+        <Home />
+        <Work />
+        <About />
+        <Skills />
+        <Contact />
+      </main>
+    </>
   );
 }
 

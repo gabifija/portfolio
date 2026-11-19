@@ -1,10 +1,10 @@
 import { HiArrowNarrowRight } from 'react-icons/hi';
-import { Link } from 'react-scroll';
+import Section from './Section';
 
 const Home = () => {
   return (
-    <div id='home' className='w-full h-screen bg-white text-black'>
-      <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full'>
+    <Section id='home' fill>
+      <div className='flex flex-col justify-center'>
         <p>hello, my name is</p>
         <p className='text-2xl sm:text-4xl font-bold'>gabriela fijałkowska-papier</p>
         <h2 className='text-2xl sm:text-4xl font-bold'>i am a <span className='text-[#b66b53] font-bold'>full-stack engineer</span>.</h2>
@@ -13,16 +13,14 @@ const Home = () => {
           <p className='max-w-[700px]'>today i work across the stack and build features with claude code.</p>
         </div>
         <div>
-          <Link to='work' smooth={true} duration={500}>
-            <button className='group border rounded-3xl border-black px-6 py-3 my-2 flex items-center hover:bg-[#327364] hover:border-[#327364] hover:text-white'> view work
-              <span className='group-hover:rotate-90 duration-300'>
-                <HiArrowNarrowRight className='ml-3' />
-              </span>
-            </button>
-          </Link>
+          <a href='#work' className='group border rounded-3xl border-black px-6 py-3 my-2 inline-flex items-center hover:bg-[#327364] hover:border-[#327364] hover:text-white'> view work
+            <span className='group-hover:rotate-90 duration-300'>
+              <HiArrowNarrowRight className='ml-3' />
+            </span>
+          </a>
         </div>
       </div>
-    </div>
+    </Section>
   );
 }
 

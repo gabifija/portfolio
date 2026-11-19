@@ -1,3 +1,5 @@
+import Section from './Section';
+
 type Project = {
   name: string;
   note?: string;
@@ -37,33 +39,28 @@ const projects: Project[] = [
 
 const Work = () => {
   return (
-    <div id='work' className='w-full min-h-screen bg-white text-black'>
-      <div className='max-w-[1000px] mx-auto p-4 pt-[100px] flex flex-col justify-center w-full min-h-screen'>
-        <div>
-          <p className='text-2xl font-bold inline text-white bg-[#9fb9ac] p-2'>work</p>
-          <p className='py-4'>what i am working on now, and projects where i have added some lines of code:</p>
-        </div>
+    <Section id='work' heading='work'>
+      <p>what i am working on now, and projects where i have added some lines of code:</p>
 
-        <div className='w-full grid sm:grid-cols-2 gap-8 py-8'>
-          {projects.map((project) => (
-            <div key={project.name}>
-              <p className='font-bold'>
-                {project.link ? (
-                  <a className='text-[#b66b53] hover:text-black' href={project.link.href} target='_blank' rel='noreferrer'>
-                    {project.name}
-                  </a>
-                ) : (
-                  <span className='text-[#b66b53]'>{project.name}</span>
-                )}
-                {project.note && <span className='font-normal'> {project.note}</span>}
-              </p>
-              <p className='py-2'>{project.description}</p>
-              <p className='text-sm text-[#327364]'>{project.stack.join(' · ')}</p>
-            </div>
-          ))}
-        </div>
+      <div className='w-full grid sm:grid-cols-2 gap-8 py-8'>
+        {projects.map((project) => (
+          <div key={project.name}>
+            <p className='font-bold'>
+              {project.link ? (
+                <a className='text-[#b66b53] hover:text-black' href={project.link.href} target='_blank' rel='noreferrer'>
+                  {project.name}
+                </a>
+              ) : (
+                <span className='text-[#b66b53]'>{project.name}</span>
+              )}
+              {project.note && <span className='font-normal'> {project.note}</span>}
+            </p>
+            <p className='py-2'>{project.description}</p>
+            <p className='text-sm text-[#327364]'>{project.stack.join(' · ')}</p>
+          </div>
+        ))}
       </div>
-    </div>
+    </Section>
   );
 };
 
